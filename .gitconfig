@@ -23,3 +23,5 @@
         conflictstyle = diff3
 [credential]
 	helper = store
+[init]
+	defaultBranch = main
