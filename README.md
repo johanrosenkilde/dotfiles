@@ -2,8 +2,8 @@
 
 I'm currently running a MacBook Pro with Mac OS X.
 
-I used to run Linux (Arch, Ubuntu, etc.) and I've kept a number of dotfiles from
-that system that I currently don't use actively.
+I used to run Linux (Arch, Fedora, Ubuntu, etc.) and I've kept a number of
+dotfiles from that system that I currently don't use actively.
 
 ## Emacs
 
