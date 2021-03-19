@@ -105,6 +105,6 @@ fi
 alias untar="tar -xf"
 alias bc="bc -l"
 
-source ~/code/emacs/env.sh
+source ~/code/dotfiles/env.sh
 
 source $HOME/.openai_key

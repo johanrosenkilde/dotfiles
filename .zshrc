@@ -24,6 +24,12 @@ alias ll="gls -lh"
 alias ed="emacsclient -c" #shorthand. And I don't intend to use ed anyway
 alias lst="gls -lts | head" # shorthand for newest files
 alias top="htop"
+alias ls="gls --color=auto -F --quoting-style=literal"
+alias df="gdf -h"
+alias du="du -h"
+
+# GNU aliases of BSD ones (on Mac OS X)
+PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
 
 # Shell functions
 setenv() { export $1=$2 }  # csh compatibility
@@ -92,7 +98,6 @@ chpwd() {
         	;;
 	esac
 }
-alias ls="gls --color=auto -F --quoting-style=literal"
 
 chpwd
 
