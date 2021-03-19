@@ -1,0 +1,25 @@
+[user]
+	email = jsrn@jsrn.dk
+	name = Johan Rosenkilde
+[core]
+	excludesfile = /home/jsrn/.gitignore_global
+	pager = most
+[giggle]
+	main-window-maximized = false
+	main-window-geometry = 951x1000+628+25
+	file-view-vpane-position = 411
+[color]
+	ui = true
+	ui = true
+	ui = true
+[push]
+	default = simple
+[alias]
+        ci = commit -m
+        st = status
+        co = checkout
+        br = branch
+[merge]
+        conflictstyle = diff3
+[credential]
+	helper = store

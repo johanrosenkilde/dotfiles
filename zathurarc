@@ -1,0 +1,13 @@
+map n scroll down
+map e scroll up
+map y scroll left
+map o scroll right
+map N navigate next
+map E navigate previous
+
+map u focus_inputbar ":open "
+
+map k search forward
+map p search backward
+
+set selection-clipboard "clipboard"

@@ -1,0 +1,61 @@
+# Compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+
+# LaTeX, Makefile.LaTeX and Emacs AUCeX/preview_latex
+.maketmp
+_region_.*
+auto
+*.aux
+*.prv
+*.dvi
+*.bbl
+*.blg
+*.out
+*.thm
+*.mtc
+*.mtc0
+*.toc
+
+# Packages #
+############
+# it's better to unpack these files and commit the raw source
+# git has its own built in compression methods
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Logs and databases #
+######################
+*.log
+*.sql
+*.sqlite
+
+# Temporary files #
+###################
+.*.swp
+
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
+/Notes Johan/gab_decoding.pdf
+/Notes Johan/notes.pdf
