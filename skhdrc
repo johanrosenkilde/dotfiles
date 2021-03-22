@@ -1,0 +1,38 @@
+cmd - return : open -n /Applications/Hyper.app
+
+# cmd - e: open -n /Applications/Emacs.app
+
+cmd - 0x32: yabai -m window --focus recent
+
+cmd - y : yabai -m window --focus west
+cmd - n : yabai -m window --focus south
+cmd - e : yabai -m window --focus north
+cmd - o : yabai -m window --focus east
+
+shift + cmd - y : yabai -m window --warp west
+shift + cmd - n : yabai -m window --warp south
+shift + cmd - e : yabai -m window --warp north
+shift + cmd - o : yabai -m window --warp east
+
+ctrl + cmd - y : yabai -m window --swap west
+ctrl + cmd - n : yabai -m window --swap south
+ctrl + cmd - e : yabai -m window --swap north
+ctrl + cmd - o : yabai -m window --swap east
+
+shift + cmd - 1 : yabai -m window --space 1
+shift + cmd - 2 : yabai -m window --space 2
+shift + cmd - 3 : yabai -m window --space 3
+shift + cmd - 4 : yabai -m window --space 4
+
+cmd - w : yabai -m window --toggle split
+cmd - f : yabai -m window --toggle zoom-fullscreen
+shift + cmd - f : yabai -m window --toggle native-fullscreen
+
+ctrl + cmd - y : yabai -m space --move prev
+   
+# defines a new mode 'test' with an on_enter command, that captures keypresses
+# :: test @ : chunkc border::color 0xff24ccaa
+
+# cmd - x ; test
+
+# test < cmd - x ; default

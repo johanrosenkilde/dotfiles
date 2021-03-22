@@ -1,1 +1,1 @@
-source ~/code/emacs/env.sh
+source ~/code/dotfiles/env.sh

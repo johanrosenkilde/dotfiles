@@ -26,7 +26,8 @@ alias lst="gls -lts | head" # shorthand for newest files
 alias top="htop"
 alias ls="gls --color=auto -F --quoting-style=literal"
 alias df="gdf -h"
-alias du="du -h"
+alias du="gdu -h"
+alias find="gfind"
 
 # GNU aliases of BSD ones (on Mac OS X)
 PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
