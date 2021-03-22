@@ -25,8 +25,9 @@ shift + cmd - 3 : yabai -m window --space 3
 shift + cmd - 4 : yabai -m window --space 4
 
 cmd - w : yabai -m window --toggle split
-cmd - f : yabai -m window --toggle zoom-fullscreen
-shift + cmd - f : yabai -m window --toggle native-fullscreen
+cmd - f : yabai -m window --toggle zoom-fullscreen && yabai -m window --toggle border
+shift + cmd - f : yabai -m window --toggle native-fullscreen && yabai -m window --toggle border
+cmd - up : yabai -m window --toggle zoom-parent && yabai -m window --toggle border
 
 ctrl + cmd - y : yabai -m space --move prev
    
