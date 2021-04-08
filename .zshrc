@@ -22,7 +22,7 @@ alias sizes='du -hs *'
 
 alias ll="gls -lh"
 alias ed="emacsclient -c" #shorthand. And I don't intend to use ed anyway
-alias lst="gls -lts | head" # shorthand for newest files
+alias lst="gls -ltsh | head" # shorthand for newest files
 alias top="htop"
 alias ls="gls --color=auto -F --quoting-style=literal"
 alias df="gdf -h"
@@ -37,7 +37,7 @@ setenv() { export $1=$2 }  # csh compatibility
 
 # Set prompts
 PROMPTCOL="`cat ~/.promptcol 2>/dev/null`"
-PROMPT=$'%{\e['${PROMPTCOL:-0}$'m%}%n %3~ :%(?.%).()%{\e[0m%} '
+PROMPT=$'%3~ :%(?.%).()%{\e[0m%} '
 #PROMPT=$'%{\e['${PROMPTCOL:-0}$'m%}%n@%m %3~ %(!.#.$)%{\e[0m%} '
 #PROMPT="[%n@%M %~]$ "    # default prompt
 #PROMPT='\[\033]0;\w\007\033[36m\]\u@\h \[\033[33m\w\033[0m\]

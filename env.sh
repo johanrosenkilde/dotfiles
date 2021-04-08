@@ -1,5 +1,5 @@
-export EDITOR="emacsclient -c"
-export VISUAL="emacsclient -c"
+export EDITOR="emacs"
+export VISUAL="emacs"
 
 PATH=$HOME/local/bin:$HOME/code/scripts:$PATH
 

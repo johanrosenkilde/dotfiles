@@ -170,10 +170,12 @@ module.exports = {
       ],
       'editor:movePreviousWord': [
           'alt+left', // Default
+          'ctrl+b',
           'ctrl+left',
       ],
       'editor:moveNextWord': [
           'alt+right', // Default
+          'ctrl+f',
           'ctrl+right',
       ],
       "tab:prev": [

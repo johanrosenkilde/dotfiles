@@ -1,0 +1,151 @@
+[general]
+accounts = jsrn,johansjulehjerter,dtu,gmail
+# accounts = github
+maxsyncaccounts = 5
+pythonfile = ~/.offlineimap.py
+
+[Account jsrn]
+localrepository = Local.jsrn
+remoterepository = Remote.jsrn
+backend = sqlite
+quick = 10
+#since we're using idlefolders, autorefresh means how often non-Inbox folders are updated
+autorefresh = 10
+
+[Repository Local.jsrn]
+type = Maildir
+localfolders = ~/mail/jsrn
+nametrans = lambda f: f
+
+[Repository Remote.jsrn]
+type = IMAP
+remotehost = mail.unoeuro.com
+remoteuser = jsrn@jsrn.dk
+remoteport = 993
+remotepasseval = mailpasswd("jsrn")
+ssl=true
+cert_fingerprint = b7bd3444bcbc4e6c2936c6b59fdd68dd475db863
+folderfilter = lambda folder: folder in ['INBOX','Sent','Archives.2021']
+maxconnections = 3
+#nametrans = lambda f: f
+idlefolders = [ 'INBOX' ]
+
+
+
+
+# [Account github]
+# localrepository = Local.github
+# remoterepository = Remote.github
+# backend = sqlite
+# quick = 10
+# #autorefresh set to something high since we're using idlefolders
+# autorefresh = 10
+
+# [Repository Local.github]
+# type = Maildir
+# localfolders = ~/mail/github
+# nametrans = lambda f: f
+
+# [Repository Remote.github]
+# type = IMAP
+# remotehost = imap.gmail.com 
+# remoteuser = johanrosenkilde@github.com
+# repoteport = 993
+# remotepasseval = mailpasswd("github")
+# ssl=true
+# sslcacertfile = ~/local/ssl_certs/ssh/certs/ca-certificates.crt 
+# maxconnections = 1
+# # nametrans = lambda f: f
+# # folderfilter = lambda folder: folder in ['INBOX']
+# # idlefolders = [ 'INBOX' ]
+
+
+
+
+
+
+
+[Account johansjulehjerter]
+localrepository = Local.johansjulehjerter
+remoterepository = Remote.johansjulehjerter
+backend = sqlite
+quick = 10
+#since we're using idlefolders, autorefresh means how often non-Inbox folders are updated
+autorefresh = 10
+
+[Repository Local.johansjulehjerter]
+type = Maildir
+localfolders = ~/mail/johansjulehjerter
+nametrans = lambda f: f
+
+[Repository Remote.johansjulehjerter]
+type = IMAP
+remotehost = mail.unoeuro.com
+remoteuser = johan@johansjulehjerter.dk
+remoteport = 993
+remotepasseval = mailpasswd("johansjulehjerter")
+ssl=true
+cert_fingerprint = b7bd3444bcbc4e6c2936c6b59fdd68dd475db863
+maxconnections = 3
+#folderfilter = lambda folder: folder in ['INBOX','Sent','Archives','Salg']
+nametrans = lambda f: f
+idlefolders = [ 'INBOX' ]
+
+
+
+
+
+[Account dtu]
+localrepository = Local.dtu
+remoterepository = Remote.dtu
+backend = sqlite
+quick = 10
+#autorefresh set to something high since we're using idlefolders
+autorefresh = 10
+
+[Repository Local.dtu]
+type = Maildir
+localfolders = ~/mail/dtu
+nametrans = lambda f: f
+
+[Repository Remote.dtu]
+type = IMAP
+remotehost = mail.win.dtu.dk
+remoteuser = win\jsrn
+repoteport = 993
+remotepasseval = mailpasswd("dtu")
+ssl=true
+cert_fingerprint = 5b7524ef26a9b905c9d4944e2144254270f1346d
+maxconnections = 3
+idlefolders = [ 'INBOX' ]
+
+
+
+
+
+[Account gmail]
+localrepository = Local.gmail
+remoterepository = Remote.gmail
+backend = sqlite
+quick = 10
+#autorefresh set to something high since we're using idlefolders
+autorefresh = 10
+
+[Repository Local.gmail]
+type = Maildir
+localfolders = ~/mail/gmail
+nametrans = lambda f: f
+
+[Repository Remote.gmail]
+type = IMAP
+remotehost = imap.gmail.com 
+remoteuser = santaphile@gmail.com
+repoteport = 993
+remotepasseval = mailpasswd("gmail")
+ssl=true
+sslcacertfile = ~/local/ssl_certs/ssh/certs/ca-certificates.crt 
+maxconnections = 1
+nametrans = lambda f: f
+folderfilter = lambda folder: folder in ['INBOX']
+idlefolders = [ 'INBOX' ]
+

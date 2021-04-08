@@ -4,30 +4,33 @@ cmd - return : open -n /Applications/Hyper.app
 
 cmd - 0x32: yabai -m window --focus recent
 
-cmd - y : yabai -m window --focus west
-cmd - n : yabai -m window --focus south
-cmd - e : yabai -m window --focus north
-cmd - o : yabai -m window --focus east
+shift + cmd - y : yabai -m window --focus west
+shift + cmd - n : yabai -m window --focus south
+shift + cmd - e : yabai -m window --focus north
+shift + cmd - o : yabai -m window --focus east
 
-shift + cmd - y : yabai -m window --warp west
-shift + cmd - n : yabai -m window --warp south
-shift + cmd - e : yabai -m window --warp north
-shift + cmd - o : yabai -m window --warp east
+ctrl + cmd - y : yabai -m window --warp west
+ctrl + cmd - n : yabai -m window --warp south
+ctrl + cmd - e : yabai -m window --warp north
+ctrl + cmd - o : yabai -m window --warp east
 
-ctrl + cmd - y : yabai -m window --swap west
-ctrl + cmd - n : yabai -m window --swap south
-ctrl + cmd - e : yabai -m window --swap north
-ctrl + cmd - o : yabai -m window --swap east
+ctrl + shift + cmd - y : yabai -m window --swap west
+ctrl + shift + cmd - n : yabai -m window --swap south
+ctrl + shift + cmd - e : yabai -m window --swap north
+ctrl + shift + cmd - o : yabai -m window --swap east
 
-shift + cmd - 1 : yabai -m window --space 1
-shift + cmd - 2 : yabai -m window --space 2
-shift + cmd - 3 : yabai -m window --space 3
-shift + cmd - 4 : yabai -m window --space 4
+ctrl + cmd - 1 : yabai -m window --space 1
+ctrl + cmd - 2 : yabai -m window --space 2
+ctrl + cmd - 3 : yabai -m window --space 3
+ctrl + cmd - 4 : yabai -m window --space 4
 
-cmd - w : yabai -m window --toggle split
-cmd - f : yabai -m window --toggle zoom-fullscreen && yabai -m window --toggle border
-shift + cmd - f : yabai -m window --toggle native-fullscreen && yabai -m window --toggle border
-cmd - up : yabai -m window --toggle zoom-parent && yabai -m window --toggle border
+shift + cmd - s : yabai -m window --toggle split
+shift + cmd - f : yabai -m window --toggle zoom-fullscreen && yabai -m window --toggle border
+ctrl + cmd - f : yabai -m window --toggle native-fullscreen && yabai -m window --toggle border
+shift + cmd - up : yabai -m window --toggle zoom-parent && yabai -m window --toggle border
+shift + cmd - u : yabai -m window --toggle zoom-parent && yabai -m window --toggle border
+shift + cmd - b : yabai -m window --toggle border
+ctrl  + cmd - b : yabai -m window --toggle border
 
 ctrl + cmd - y : yabai -m space --move prev
    
