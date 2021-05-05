@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 #
 # /etc/zshrc is sourced in interactive shells.  It
 # should contain commands to set up aliases, functions,
@@ -35,9 +42,11 @@ PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
 # Shell functions
 setenv() { export $1=$2 }  # csh compatibility
 
-# Set prompts
-PROMPTCOL="`cat ~/.promptcol 2>/dev/null`"
-PROMPT=$'%3~ :%(?.%).()%{\e[0m%} '
+# Set prompt
+source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# PROMPTCOL="`cat ~/.promptcol 2>/dev/null`"
+# PROMPT=$'%3~ :%(?.%).()%{\e[0m%} '
 #PROMPT=$'%{\e['${PROMPTCOL:-0}$'m%}%n@%m %3~ %(!.#.$)%{\e[0m%} '
 #PROMPT="[%n@%M %~]$ "    # default prompt
 #PROMPT='\[\033]0;\w\007\033[36m\]\u@\h \[\033[33m\w\033[0m\]
@@ -168,3 +177,7 @@ fi
 export ICAROOT="/home/jsrn/local/citrix"
 
 source $HOME/.openai_key
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
