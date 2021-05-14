@@ -4,6 +4,7 @@
 [core]
 	excludesfile = /home/jsrn/.gitignore_global
 	pager = most
+	editor = vim
 [giggle]
 	main-window-maximized = false
 	main-window-geometry = 951x1000+628+25
@@ -19,6 +20,7 @@
         st = status
         co = checkout
         br = branch
+	recent = branch --sort=-committerdate --format=\"%(committerdate:relative)%09%(refname:short)\"
 [merge]
         conflictstyle = diff3
 [credential]

@@ -160,9 +160,6 @@ if [ -n "$INSIDE_EMACS" ]; then
   print -P "\033AnSiTc %d"
 fi
 
-# OPAM configuration
-. /home/jsrn/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
-# eval `opam config env`
 
 if [[ "$TERM" == "dumb" ]]
 then
@@ -176,8 +173,12 @@ fi
 
 export ICAROOT="/home/jsrn/local/citrix"
 
-source $HOME/.openai_key
+source $HOME/github/.openai_key
+source $HOME/github/.github_access_token
 
+NVM_NEWEST=$(ls ~/.nvm/versions/node/ | sort | tail -1)
+PATH=$PATH:$NVM_NEWEST
 export NVM_DIR="$HOME/.nvm"
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh" --no-use # This loads nvm
 [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+# nvm use node > /dev/null
