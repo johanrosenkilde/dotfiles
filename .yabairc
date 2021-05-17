@@ -14,6 +14,17 @@
 # sudo yabai --load-sa
 # yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 
+# Labels
+yabai -m space 1 --label config
+yabai -m space 2 --label slack
+yabai -m space 3 --label macbook3
+yabai -m space 4 --label macbook4
+
+yabai -m space 5 --label browser
+yabai -m space 6 --label code1
+yabai -m space 7 --label code2
+yabai -m space 8 --label code3
+
 
 # Layouting behaviour
 yabai -m config layout                       bsp
