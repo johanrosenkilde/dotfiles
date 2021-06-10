@@ -90,6 +90,7 @@ bindkey "^[[F" end-of-line
 export WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 
 # Color completion.
+eval $(gdircolors)
 export ZLS_COLORS=$LS_COLORS
 zmodload -ui complist
 
@@ -98,6 +99,19 @@ _compdir=/usr/share/zsh/$ZSH_VERSION/functions/Core
 [[ -z $fpath[(r)$_compdir] ]] && fpath=($fpath $_compdir)
 autoload -U compinit
 compinit
+# fzf-tab
+source ~/local/fzf-tab/fzf-tab.plugin.zsh 
+# disable sort when completing `git checkout`
+zstyle ':completion:*:git-checkout:*' sort false
+# set descriptions format to enable group support
+zstyle ':completion:*:descriptions' format '[%d]'
+# set list-colors to enable filename colorizing
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+# preview directory's content with exa when completing cd
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa -1 --color=always $realpath'
+# switch group using `,` and `.`
+zstyle ':fzf-tab:*' switch-group ',' '.'
+
 
 chpwd() {
 	[[ -t 1 ]] || return
@@ -170,8 +184,6 @@ then
   unfunction preexec
   PS1='$ '
 fi
-
-export ICAROOT="/home/jsrn/local/citrix"
 
 source $HOME/github/.openai_key
 source $HOME/github/.github_access_token
