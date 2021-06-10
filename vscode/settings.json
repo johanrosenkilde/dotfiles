@@ -1,0 +1,316 @@
+{
+    // "workbench.editorAssociations": {
+    //     "*.ipynb": "jupyter-notebook"
+    // },
+    "vim.autoSwitchInputMethod.obtainIMCmd": "/usr/local/bin/im-select",
+    "vim.autoSwitchInputMethod.switchIMCmd": "/usr/local/bin/im-select {im}",
+    "vim.easymotion": true,
+    "vim.camelCaseMotion.enable": true,
+    "vim.debug.silent": true,
+    "vim.debug.loggingLevelForConsole": "debug",
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            // Move left
+            "before": [
+                "y"
+            ],
+            "after": [
+                "h"
+            ]
+        },
+        {
+            // Move down
+            "before": [
+                "n"
+            ],
+            "after": [
+                "j"
+            ]
+        },
+        {
+            // Move up
+            "before": [
+                "e"
+            ],
+            "after": [
+                "k"
+            ]
+        },
+        {
+            // Move right
+            "before": [
+                "o"
+            ],
+            "after": [
+                "l"
+            ]
+        },
+        {
+            // Yank <something
+            "before": [
+                "j"
+            ],
+            "after": [
+                "y"
+            ]
+        },
+        {
+            // Yank line
+            "before": [
+                "U"
+            ],
+            "after": [
+                "y",
+                "y"
+            ]
+        },
+        {
+            // Center view
+            "before": [
+                "<C-l>"
+            ],
+            "after": [
+                "z",
+                "z"
+            ]
+        },
+        {
+            // Open line below
+            "before": [
+                "h"
+            ],
+            "after": [
+                "o"
+            ]
+        },
+        {
+            // Jump forward
+            "before": [
+                "<C-k>"
+            ],
+            "after": [
+                "<C-i>"
+            ]
+        },
+        {
+            // Search forward
+            "before": [
+                "k"
+            ],
+            "after": [
+                "n"
+            ]
+        },
+        {
+            // Search back
+            "before": [
+                "K"
+            ],
+            "after": [
+                "N"
+            ]
+        },
+        {
+            // Beginning of line
+            "before": [
+                "<C-a>"
+            ],
+            "after": [
+                "^"
+            ]
+        },
+        {
+            // End of line
+            "before": [
+                "<C-e>"
+            ],
+            "after": [
+                "$"
+            ]
+        },
+        {
+            // Move down a half-screen
+            "before": [
+                "space"
+            ],
+            "after": [
+                "C-d",
+            ]
+        },
+        {
+            // EasyMotion beginning of word
+            "before": [
+                "<C-f>"
+            ],
+            "after": [
+                "\\",
+                "\\",
+                "w"
+            ]
+        }
+    ],
+    "vim.visualModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "y"
+            ],
+            "after": [
+                "h"
+            ]
+        },
+        {
+            "before": [
+                "n"
+            ],
+            "after": [
+                "j"
+            ]
+        },
+        {
+            "before": [
+                "e"
+            ],
+            "after": [
+                "k"
+            ]
+        },
+        {
+            "before": [
+                "o"
+            ],
+            "after": [
+                "l"
+            ]
+        },
+        {
+            "before": [
+                "j"
+            ],
+            "after": [
+                "y"
+            ]
+        },
+        {
+            // Search forward
+            "before": [
+                "k"
+            ],
+            "after": [
+                "n"
+            ]
+        },
+        {
+            // Search back
+            "before": [
+                "K"
+            ],
+            "after": [
+                "N"
+            ]
+        },
+        {
+            // Beginning of line
+            "before": [
+                "<C-a>"
+            ],
+            "after": [
+                "^"
+            ]
+        },
+        {
+            // End of line
+            "before": [
+                "<C-e>"
+            ],
+            "after": [
+                "$"
+            ]
+        },
+        {
+            // Toggle comment
+            "before": [
+                "z"
+            ],
+            "after": [
+                "g",
+                "c"
+            ]
+        },
+        {
+            // Toggle block comment
+            "before": [
+                "Z"
+            ],
+            "after": [
+                "g",
+                "C"
+            ]
+        },
+        {
+            // Move down a half-screen
+            "before": [
+                "space"
+            ],
+            "after": [
+                "C-d",
+            ]
+        },
+    ],
+    "vim.insertModeKeyBindingsNonRecursive": [
+        {
+            // Delete word back
+            "before": [
+                "<C-BS>"
+            ],
+            "after": [
+                "<C-w>"
+            ]
+        }
+        // {
+        //     "before": ["<C-y>"],
+        //     "after": ["<M-c>"]
+        // }
+    ],
+    "rewrap.autoWrap.enabled": true,
+    "jupyter.askForKernelRestart": false,
+    "jupyter.textOutputLimit": 200000,
+    "launch": {
+
+        "configurations": [],
+        "compounds": []
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "terminal.integrated.fontFamily": "MesloLGS NF",
+    "copilot.debug.useProxy": true,
+    "copilot.enabled": {
+        "*": true,
+        "yaml": true,
+        "plaintext": true,
+        "markdown": false,
+        "magit": false
+    },
+    "editor.autoClosingBrackets": "never",
+    "editor.autoClosingQuotes": "never",
+    "copilot.debug.forceUseEarhartModel": true,
+    "copilot.secret_key": "sk-83g4k2SJV4JuH5CoD9GFiqfMk54xWst704CZwJ36",
+    "editor.inlineSuggest.enabled": true,
+    "copilot.codelens.enable": true,
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+    },
+    "editor.tabSize": 8,
+    "editor.cursorStyle": "line",
+    "editor.insertSpaces": false,
+    "editor.lineNumbers": "on",
+    "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
+    "editor.wordWrap": "off",
+    "workbench.editorAssociations": [
+        {
+            "viewType": "jupyter.notebook.ipynb",
+            "filenamePattern": "*.ipynb"
+        }
+    ]
+}
