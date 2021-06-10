@@ -1,5 +1,5 @@
 [general]
-accounts = jsrn,johansjulehjerter,dtu,gmail
+accounts = jsrn,johansjulehjerter,gmail
 # accounts = github
 maxsyncaccounts = 5
 pythonfile = ~/.offlineimap.py
