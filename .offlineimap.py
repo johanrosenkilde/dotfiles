@@ -3,7 +3,7 @@
 import os, subprocess
 def mailpasswd(acct):
   acct = os.path.basename(acct)
-  path = "/Users/johanrosenkilde/mail/%s.gpg" % acct
+  path = "/Users/johanprivate/mail/%s.gpg" % acct
   args = ["gpg", "--quiet", "-d", path]
   try:
     return subprocess.check_output(args).strip()

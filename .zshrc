@@ -27,14 +27,17 @@ alias rm='nocorrect rm'       # no spelling correction on rm
 alias mkdir='nocorrect mkdir' # no spelling correction on mkdir
 alias sizes='du -hs *'
 
-alias ll="gls -lh"
+alias ls="exa"
+alias la="exa -a"
+alias ll="exa -lagh"
+alias lst="exa -l --reverse --sort=new --color=always | head" # shorthand for newest files
+alias lsdir="exa -T --level=2"
 alias ed="emacsclient -c" #shorthand. And I don't intend to use ed anyway
-alias lst="gls -ltsh | head" # shorthand for newest files
 alias top="htop"
-alias ls="gls --color=auto -F --quoting-style=literal"
 alias df="gdf -h"
-alias du="gdu -h"
-alias find="gfind"
+alias du="dust"
+
+alias find="fd"
 
 # GNU aliases of BSD ones (on Mac OS X)
 PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
@@ -97,8 +100,10 @@ zmodload -ui complist
 # Completion functions
 _compdir=/usr/share/zsh/$ZSH_VERSION/functions/Core
 [[ -z $fpath[(r)$_compdir] ]] && fpath=($fpath $_compdir)
-autoload -U compinit
-compinit
+
+autoload -Uz compinit
+compinit -ui -d
+
 # fzf-tab
 source ~/local/fzf-tab/fzf-tab.plugin.zsh 
 # disable sort when completing `git checkout`
@@ -185,8 +190,10 @@ then
   PS1='$ '
 fi
 
-source $HOME/github/.openai_key
-source $HOME/github/.github_access_token
+if [ -e $HOME/github ]; then
+    source $HOME/github/.openai_key
+    source $HOME/github/.github_access_token
+fi
 
 NVM_NEWEST=$(ls ~/.nvm/versions/node/ | sort | tail -1)
 PATH=$PATH:$NVM_NEWEST
@@ -194,3 +201,11 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh" --no-use # This loads nvm
 [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 # nvm use node > /dev/null
+
+function sgit() {
+    say -v trinoids git $@
+    git "$@"
+}
+
+# This has already been sourced as .zshenv, but other things are clobbering e.g. $PATH, so we resource it now
+source ~/.zshenv

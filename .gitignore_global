@@ -42,9 +42,11 @@ auto
 *.sql
 *.sqlite
 
-# Temporary files #
+# IDE files #
 ###################
 .*.swp
+.ionide
+.fake
 
 
 # OS generated files #

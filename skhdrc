@@ -7,7 +7,7 @@
 
 
 # ## Applications
-cmd - return : open -n /Applications/Hyper.app
+ctrl + cmd - t: open -n /Applications/Hyper.app
 # cmd - e: open -n /Applications/Emacs.app
 
 
@@ -65,7 +65,7 @@ ctrl + cmd - 4 : yabai -m window --space code3
 # ctrl + cmd - 5 : yabai -m window --space 5
 shift + ctrl + cmd - 1 : yabai -m window --space config
 shift + ctrl + cmd - 2 : yabai -m window --space slack
-shift + ctrl + cmd - 4 : yabai -m window --space macbook3
+shift + ctrl + cmd - 3 : yabai -m window --space macbook3
 shift + ctrl + cmd - 4 : yabai -m window --space macbook4
 # ctrl + cmd - 0 : yabai -m window --space 10
 

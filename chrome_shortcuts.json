@@ -1,0 +1,135 @@
+[
+  {
+    "key": "ctrl+n",
+    "label": "Next tab",
+    "action": "nexttab",
+    "sites": "",
+    "sitesArray": [
+      ""
+    ]
+  },
+  {
+    "key": "ctrl+e",
+    "label": "Previous tab",
+    "action": "prevtab",
+    "sites": "",
+    "sitesArray": [
+      ""
+    ]
+  },
+  {
+    "key": "ctrl+u",
+    "label": "Undo close tab",
+    "action": "reopentab",
+    "sites": "",
+    "sitesArray": [
+      ""
+    ]
+  },
+  {
+    "key": "ctrl+t",
+    "label": "New tab",
+    "action": "gototab",
+    "sites": "",
+    "sitesArray": [
+      ""
+    ]
+  },
+  {
+    "key": "ctrl+r",
+    "label": "Reload",
+    "action": "reload",
+    "sites": "",
+    "sitesArray": [
+      ""
+    ]
+  },
+  {
+    "key": "ctrl+shift+r",
+    "label": "Hard reload",
+    "action": "hardreload",
+    "sites": "",
+    "sitesArray": [
+      ""
+    ]
+  },
+  {
+    "key": "ctrl+d",
+    "label": "Close tab",
+    "action": "closetab",
+    "sites": "",
+    "sitesArray": [
+      ""
+    ]
+  },
+  {
+    "action": "top",
+    "key": "ctrl+g ctrl+g",
+    "label": "Scroll to top",
+    "sites": "",
+    "sitesArray": [
+      ""
+    ]
+  },
+  {
+    "key": "ctrl+g ctrl+v",
+    "label": "Scroll to bottom",
+    "action": "bottom",
+    "sites": "",
+    "sitesArray": [
+      ""
+    ]
+  },
+  {
+    "action": "copyurl",
+    "key": "ctrl+y",
+    "label": "",
+    "sites": "",
+    "sitesArray": [
+      ""
+    ]
+  },
+  {
+    "action": "back",
+    "key": "ctrl+b",
+    "sites": "",
+    "sitesArray": [
+      ""
+    ]
+  },
+  {
+    "key": "ctrl+f",
+    "action": "forward",
+    "sites": "",
+    "sitesArray": [
+      ""
+    ]
+  },
+  {
+    "action": "clonetab",
+    "key": "ctrl+k",
+    "sites": "",
+    "sitesArray": [
+      ""
+    ]
+  },
+  {
+    "action": "lastusedtab",
+    "key": "ctrl+left",
+    "sites": "",
+    "sitesArray": [
+      ""
+    ]
+  },
+  {
+    "key": "ctrl+x",
+    "action": "showlatestdownload",
+    "sites": "",
+    "sitesArray": [
+      ""
+    ]
+  },
+  {
+    "key": "ctrl+right"
+  }
+]

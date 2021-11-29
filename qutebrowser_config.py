@@ -6,7 +6,7 @@ c.auto_save.session = True
 c.completion.use_best_match = True
 c.content.cookies.store = False
 c.content.geolocation = False
-c.content.ssl_strict = True # Block all invalid HTTPS certificate requests (often google ads)
+c.content.tls.certificate_errors = "ask-block-thirdparty" # Block all invalid HTTPS certificate requests (often google ads)
 c.content.javascript.can_access_clipboard = True
 
 c.editor.command = [ "emacsclient", "-c", "-e", "(quickedit \"{file}\" {line} {column})" ]

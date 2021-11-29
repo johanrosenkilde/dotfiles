@@ -19,6 +19,7 @@
         ci = commit -m
         st = status
         co = checkout
+        sw = switch
         br = branch
 	recent = branch --sort=-committerdate --format=\"%(committerdate:relative)%09%(refname:short)\"
 [merge]

@@ -1,7 +1,13 @@
 export EDITOR="emacs"
 export VISUAL="emacs"
 
-PATH=$HOME/local/bin:$HOME/code/scripts:$PATH
+# In interactive shells, this will be double-sourced.
+# Avoid double-adding these paths
+PREPEND=$HOME/local/bin:$HOME/code/scripts:
+export PATH=$PREPEND$(echo "$PATH" | sed -e "s,$PREPEND,,g" )
+
+# Remove strange artifact
+export PATH=$(echo "$PATH" | sed -e "s,:v16.0.0,,g" )
 
 export SAGE_PATH=$HOME/code/python:$HOME/mat
 
@@ -14,5 +20,5 @@ export SAGE_PATH=$HOME/code/python:$HOME/mat
 export NO_AT_BRIDGE=1
 
 # Set Pager
-export PAGER="most"
-export LEDGER_PAGER="most"
+export PAGER="less -R"
+export LEDGER_PAGER="less -R"
