@@ -1,6 +1,26 @@
 // Place your key bindings in this file to override the defaults
 [
     {
+        "key": "shift+A",
+        "command": "macros.vimShiftA",
+        "when": "editorFocus && vim.active && !inDebugRepl && vim.mode == 'Normal'"
+    },
+    {
+        "key": "h",
+        "command": "macros.openLineBelow",
+        "when": "editorFocus && vim.active && !inDebugRepl && vim.mode == 'Normal'"
+    },
+    {
+        "key": "h",
+        "command": "macros.openLineBelow",
+        "when": "editorFocus && vim.active && !inDebugRepl && vim.mode == 'Normal'"
+    },
+    {
+        "key": "shift+o",
+        "command": "macros.openLineAbove",
+        "when": "editorFocus && vim.active && !inDebugRepl && vim.mode == 'Normal'"
+    },
+    {
         "key": "shift+space",
         "command": "cursorPageUp",
         "when": "editorFocus && vim.active && !inDebugRepl && vim.mode == 'Normal'"
@@ -12,6 +32,20 @@
     {
         "key": "ctrl+i ctrl+f",
         "command": "workbench.action.quickOpen"
+    },
+    {
+        "key": "cmd+o",
+        "command": "file-browser.open"
+    },
+    {
+        "key": "ctrl+b",
+        "command": "file-browser.stepOut",
+        "when": "inFileBrowser"
+    },
+    {
+        "key": "ctrl+f",
+        "command": "file-browser.stepIn",
+        "when": "inFileBrowser"
     },
     {
         "key": "ctrl+backspace",
@@ -26,6 +60,7 @@
         "key": "shift+cmd+f",
         "command": "-workbench.action.findInFiles"
     },
+    
     // Window control
     {
         "key": "ctrl+w /",
@@ -78,16 +113,12 @@
     },
     {
         "key": "cmd+w",
-        "command": "-workbench.action.closeWindow",
-        "when": "!editorIsOpen && !multipleEditorGroups"
+        "command": "workbench.action.closeWindow",
+        "when": "!editorIsOpen && !multipleEditorGroups && !terminal.active"
     },
     {
         "key": "cmd+d",
         "command": "workbench.action.closeActiveEditor"
-    },
-    {
-        "key": "cmd+w",
-        "command": "-workbench.action.closeActiveEditor"
     },
     {
         "key": "cmd+d",
@@ -107,6 +138,16 @@
         "key": "ctrl+w tab",
         "command": "workbench.action.toggleSidebarVisibility"
     },
+    {
+        "key": "ctrl+w ctrl+d",
+        "command": "workbench.action.closeEditorsAndGroup"
+    },
+    {
+        "key": "ctrl+w p",
+        "command": "workbench.actions.view.problems",
+        "when": "workbench.panel.markers.view.active"
+    },
+
 
     // Magit setup
     {
@@ -173,12 +214,16 @@
         "command": "magit.status"
     },
     {
-        "key": "ctrl+w ctrl+d",
-        "command": "workbench.action.closeEditorsAndGroup"
-    },
-    {
         "key": "ctrl+m i",
         "command": "merge-conflict.accept.incoming"
+    },
+
+
+    // Terminal setup
+
+    {
+        "key": "ctrl+w `",
+        "command": "workbench.action.terminal.toggleTerminal",
     },
     {
         "key": "ctrl+w =",
@@ -189,5 +234,58 @@
         "key": "ctrl+`",
         "command": "-workbench.action.terminal.toggleTerminal",
         "when": "terminal.active"
+    },
+    {
+        "key": "cmd+t",
+        "command": "workbench.action.terminal.new",
+        "when": "terminalFocus && terminalProcessSupported"
+    },
+    {
+        "key": "cmd+w",
+        "command": "workbench.action.terminal.kill",
+        "when": "terminalFocus && terminalProcessSupported"
+    },
+    {
+        "key": "cmd+d",
+        "command": "workbench.action.terminal.kill",
+        "when": "terminalFocus && terminalProcessSupported"
+    },
+    {
+        "key": "ctrl+w /",
+        "command": "workbench.action.terminal.split",
+        "when": "terminalFocus && terminalProcessSupported"
+    },
+    {
+        "key": "ctrl+w o",
+        "command": "workbench.action.focusActiveEditorGroup",
+        "when": "terminalFocus || problemFocus"
+    },
+    {
+        "key": "ctrl+w e",
+        "command": "workbench.action.focusActiveEditorGroup",
+        "when": "terminalFocus || problemFocus"
+    },
+    {
+        "key": "ctrl+w y",
+        "command": "workbench.action.focusActiveEditorGroup",
+        "when": "terminalFocus || problemFocus"
+    },
+    {
+        "key": "ctrl+w n",
+        "command": "workbench.action.focusActiveEditorGroup",
+        "when": "terminalFocus || problemFocus"
+    },
+    {
+        "key": "ctrl+tab",
+        "command": "workbench.action.terminal.focusNext",
+        "when": "terminalFocus && terminalProcessSupported"
+    },
+    {
+        "key": "cmd+]",
+        "command": "workbench.action.terminal.resizePaneLeft"
+    },
+    {
+        "key": "cmd+[",
+        "command": "workbench.action.terminal.resizePaneRight"
     },
 ]

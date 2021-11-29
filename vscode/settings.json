@@ -1,13 +1,29 @@
 {
-    // "workbench.editorAssociations": {
-    //     "*.ipynb": "jupyter-notebook"
-    // },
+    // VIM SETUP
+    "macros": {
+        "vimShiftA": [
+            "cursorLineEnd",
+            "extension.vim_insert",
+            "editor.action.inlineSuggest.trigger"
+        ],
+        "openLineBelow": [
+            "editor.action.insertLineAfter",
+            "extension.vim_insert",
+            "editor.action.inlineSuggest.trigger"
+        ],
+        "openLineAbove": [
+            "editor.action.insertLineBefore",
+            "extension.vim_insert",
+            "editor.action.inlineSuggest.trigger"
+        ],
+    },
     "vim.autoSwitchInputMethod.obtainIMCmd": "/usr/local/bin/im-select",
     "vim.autoSwitchInputMethod.switchIMCmd": "/usr/local/bin/im-select {im}",
     "vim.easymotion": true,
     "vim.camelCaseMotion.enable": true,
     "vim.debug.silent": true,
     "vim.debug.loggingLevelForConsole": "debug",
+    "vim.surround": false,
     "vim.normalModeKeyBindingsNonRecursive": [
         {
             // Move left
@@ -271,46 +287,86 @@
         //     "after": ["<M-c>"]
         // }
     ],
-    "rewrap.autoWrap.enabled": true,
-    "jupyter.askForKernelRestart": false,
-    "jupyter.textOutputLimit": 200000,
-    "launch": {
 
-        "configurations": [],
-        "compounds": []
-    },
-    "[typescript]": {
-        "editor.defaultFormatter": "vscode.typescript-language-features"
-    },
+
+    // VSCODE VISUALS
+    "editor.fontFamily": " Menlo, Monaco, 'Courier New', monospace",
     "terminal.integrated.fontFamily": "MesloLGS NF",
-    "copilot.debug.useProxy": true,
-    "copilot.enabled": {
-        "*": true,
-        "yaml": true,
-        "plaintext": true,
-        "markdown": false,
-        "magit": false
-    },
+    "editor.renderWhitespace": "all",
+    "editor.suggest.showStatusBar": true,
+    "file-browser.labelIgnoredFiles": true,
+
+
+    // GENERAL CODE SETTINGS
+    "rewrap.autoWrap.enabled": true,
     "editor.autoClosingBrackets": "never",
     "editor.autoClosingQuotes": "never",
-    "copilot.debug.forceUseEarhartModel": true,
-    "copilot.secret_key": "sk-83g4k2SJV4JuH5CoD9GFiqfMk54xWst704CZwJ36",
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true,
+    "editor.cursorStyle": "line",
+    "editor.lineNumbers": "on",
+    "editor.wordWrap": "off",
+    "security.workspace.trust.untrustedFiles": "open",
     "editor.inlineSuggest.enabled": true,
-    "copilot.codelens.enable": true,
+
+    "github.copilot.enable": {
+        "*": true,
+        "yaml": false,
+        "plaintext": true,
+        "markdown": true,
+        "git-commit": false,
+        "fsharp": false
+    },
+    "github.copilot.advanced": {
+        "indentationMode": {
+            "*": "server"
+        }
+    },
+
+
+    // LANGUAGE-SPECIFIC SETTINGS
+    "[python]": {
+        "editor.defaultFormatter": null,
+        "editor.formatOnSave": true,
+    },
+    "python.formatting.provider": "autopep8",
+    "python.analysis.typeCheckingMode": "strict",
+    "python.linting.pylintEnabled": true,
+    "python.linting.pycodestyleEnabled": true,
+    "python.linting.pylintArgs": [
+        "--rcfile",
+        "${workspaceFolder}/.pylintrc"
+    ],
+
+    // TYPESCRIPT
+    "[typescript]": {
+          "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "typescript.suggest.autoImports": false,
+
+    // JAVASCRIPT
+    "[javascript]": {
+          "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "javascript.suggest.autoImports": false,
+    "debug.javascript.suggestPrettyPrinting": false,
+
+    // NOTEBOOK
     "notebook.cellToolbarLocation": {
         "default": "right",
         "jupyter-notebook": "left"
     },
-    "editor.tabSize": 8,
-    "editor.cursorStyle": "line",
-    "editor.insertSpaces": false,
-    "editor.lineNumbers": "on",
-    "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
-    "editor.wordWrap": "off",
-    "workbench.editorAssociations": [
-        {
-            "viewType": "jupyter.notebook.ipynb",
-            "filenamePattern": "*.ipynb"
-        }
-    ]
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
+    },
+    "jupyter.askForKernelRestart": false,
+
+    // FSHARP F#
+    "FSharp.suggestGitignore": false,
+
+    // OTHER
+    "launch": {
+        "configurations": [],
+        "compounds": []
+    },
 }
