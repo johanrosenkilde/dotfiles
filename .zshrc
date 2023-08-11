@@ -16,6 +16,7 @@ umask 022
 setopt magic_equal_subst
 setopt hist_find_no_dups
 setopt hist_ignore_space
+setopt inc_append_history
 unsetopt promptcr
 limit coredumpsize 0
 
@@ -37,7 +38,7 @@ alias top="htop"
 alias df="gdf -h"
 alias du="dust"
 
-alias find="fd"
+# alias find="fd"
 
 # GNU aliases of BSD ones (on Mac OS X)
 PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
@@ -157,7 +158,7 @@ chpwd
 
 
 
-###### MINE EGNE TILFØJELSER ######
+###### MINE EGNE TILFOJELSER ######
 
 alias untar="tar -xf"
 alias bc="bc -l"
