@@ -1,5 +1,5 @@
 [user]
-	email = jsrn@jsrn.dk
+	email = johanrosenkilde@github.com
 	name = Johan Rosenkilde
 [core]
 	excludesfile = /home/jsrn/.gitignore_global
@@ -15,10 +15,10 @@
 	ui = true
 [push]
 	default = simple
+	autoSetupRemote = true
 [alias]
         ci = commit -m
         st = status
-        co = checkout
         sw = switch
         br = branch
 	recent = branch --sort=-committerdate --format=\"%(committerdate:relative)%09%(refname:short)\"
@@ -28,3 +28,71 @@
 	helper = store
 [init]
 	defaultBranch = main
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[safe]
+	directory = /Users/Shared/code/emacs
+	directory = /Users/Shared/docs/economy
+	directory = /var/folders/j0/r7dc2w9170935xm5v77_jzfr0000gn/T/tmp3fhy2c3j/johanrosenkilde-nasty_python-87a77c6
+	directory = /var/folders/j0/r7dc2w9170935xm5v77_jzfr0000gn/T/tmpg70zqin3/johanrosenkilde-nasty_python-87a77c6
+	directory = /var/folders/j0/r7dc2w9170935xm5v77_jzfr0000gn/T/tmp8q2n9em6/johanrosenkilde-nasty_python-87a77c6
+	directory = /var/folders/j0/r7dc2w9170935xm5v77_jzfr0000gn/T/tmpfvg7ozph/johanrosenkilde-nasty_python-87a77c6
+	directory = /var/folders/j0/r7dc2w9170935xm5v77_jzfr0000gn/T/tmp6nltnpya/johanrosenkilde-nasty_python-87a77c6
+	directory = /var/folders/j0/r7dc2w9170935xm5v77_jzfr0000gn/T/tmp34127cf4/johanrosenkilde-nasty_python-87a77c6
+	directory = /var/folders/j0/r7dc2w9170935xm5v77_jzfr0000gn/T/tmpq05123as/johanrosenkilde-nasty_python-87a77c6
+	directory = /var/folders/j0/r7dc2w9170935xm5v77_jzfr0000gn/T/tmplpui6mar/johanrosenkilde-nasty_python-87a77c6
+	directory = /var/folders/j0/r7dc2w9170935xm5v77_jzfr0000gn/T/tmplap5wkuj/johanrosenkilde-nasty_python-87a77c6
+	directory = /var/folders/j0/r7dc2w9170935xm5v77_jzfr0000gn/T/tmpwmyek8s1/johanrosenkilde-nasty_python-87a77c6
+	directory = /var/folders/j0/r7dc2w9170935xm5v77_jzfr0000gn/T/tmpfockoucc/johanrosenkilde-nasty_python-87a77c6
+	directory = /var/folders/j0/r7dc2w9170935xm5v77_jzfr0000gn/T/tmp3hm2xln5/johanrosenkilde-nasty_python-87a77c6
+	directory = /var/folders/j0/r7dc2w9170935xm5v77_jzfr0000gn/T/tmpejjof_pc/johanrosenkilde-nasty_python-87a77c6
+	directory = /var/folders/j0/r7dc2w9170935xm5v77_jzfr0000gn/T/tmpkv7m8i5b/johanrosenkilde-nasty_python-87a77c6
+	directory = /var/folders/j0/r7dc2w9170935xm5v77_jzfr0000gn/T/tmpid68bzbm/johanrosenkilde-nasty_python-87a77c6
+	directory = /var/folders/j0/r7dc2w9170935xm5v77_jzfr0000gn/T/tmperfirr_3/johanrosenkilde-nasty_python-87a77c6
+	directory = /var/folders/j0/r7dc2w9170935xm5v77_jzfr0000gn/T/tmp6mvkd2fe/johanrosenkilde-nasty_python-87a77c6
+	directory = /var/folders/j0/r7dc2w9170935xm5v77_jzfr0000gn/T/tmpkah6txjc/johanrosenkilde-nasty_python-87a77c6
+	directory = /var/folders/j0/r7dc2w9170935xm5v77_jzfr0000gn/T/tmprozoupxg/johanrosenkilde-nasty_python-87a77c6
+	directory = /var/folders/j0/r7dc2w9170935xm5v77_jzfr0000gn/T/tmpjuio609p/johanrosenkilde-nasty_python-87a77c6
+	directory = /var/folders/j0/r7dc2w9170935xm5v77_jzfr0000gn/T/tmpms8ivtuj/johanrosenkilde-nasty_python-87a77c6
+	directory = /var/folders/j0/r7dc2w9170935xm5v77_jzfr0000gn/T/tmp858gsc9e/johanrosenkilde-nasty_python-87a77c6
+	directory = /var/folders/j0/r7dc2w9170935xm5v77_jzfr0000gn/T/tmpitni1ltg/johanrosenkilde-nasty_python-87a77c6
+	directory = /var/folders/j0/r7dc2w9170935xm5v77_jzfr0000gn/T/tmpisozqfzh/johanrosenkilde-nasty_python-87a77c6
+	directory = /var/folders/j0/r7dc2w9170935xm5v77_jzfr0000gn/T/tmp76rrf9_w/johanrosenkilde-nasty_python-87a77c6
+	directory = /var/folders/j0/r7dc2w9170935xm5v77_jzfr0000gn/T/tmpz0oml5yo/johanrosenkilde-nasty_python-87a77c6
+	directory = /var/folders/j0/r7dc2w9170935xm5v77_jzfr0000gn/T/tmpv9_lym9q/johanrosenkilde-nasty_python-87a77c6
+	directory = /var/folders/j0/r7dc2w9170935xm5v77_jzfr0000gn/T/tmphujw0z04/johanrosenkilde-nasty_python-87a77c6
+	directory = /var/folders/j0/r7dc2w9170935xm5v77_jzfr0000gn/T/tmp7rmaq5gn/johanrosenkilde-nasty_python-87a77c6
+	directory = /var/folders/j0/r7dc2w9170935xm5v77_jzfr0000gn/T/tmpb2wdl09g/johanrosenkilde-nasty_python-87a77c6
+	directory = /var/folders/j0/r7dc2w9170935xm5v77_jzfr0000gn/T/tmp4gi1u7sh/johanrosenkilde-nasty_python-87a77c6
+	directory = /var/folders/j0/r7dc2w9170935xm5v77_jzfr0000gn/T/tmpyrj93_o0/johanrosenkilde-nasty_python-87a77c6
+	directory = /var/folders/j0/r7dc2w9170935xm5v77_jzfr0000gn/T/tmp7vrnf72m/johanrosenkilde-nasty_python-87a77c6
+	directory = /var/folders/j0/r7dc2w9170935xm5v77_jzfr0000gn/T/tmp1hf_3laz/johanrosenkilde-nasty_python-87a77c6
+	directory = /var/folders/j0/r7dc2w9170935xm5v77_jzfr0000gn/T/tmpetm2_zo_/johanrosenkilde-nasty_python-87a77c6
+	directory = /var/folders/j0/r7dc2w9170935xm5v77_jzfr0000gn/T/tmptkiyo51p/johanrosenkilde-nasty_javascript-8828904
+	directory = /var/folders/j0/r7dc2w9170935xm5v77_jzfr0000gn/T/tmpkflgt9r_/johanrosenkilde--nasty_python
+	directory = /var/folders/j0/r7dc2w9170935xm5v77_jzfr0000gn/T/tmp6xd2hnv9/johanrosenkilde--nasty_python
+	directory = /var/folders/j0/r7dc2w9170935xm5v77_jzfr0000gn/T/tmp0vj0xtyo/johanrosenkilde-nasty_python-87a77c6
+	directory = /var/folders/j0/r7dc2w9170935xm5v77_jzfr0000gn/T/tmp_80wc479/johanrosenkilde-nasty_python-87a77c6
+	directory = /var/folders/j0/r7dc2w9170935xm5v77_jzfr0000gn/T/tmpu38bu_8n/johanrosenkilde-nasty_python-87a77c6
+	directory = /var/folders/j0/r7dc2w9170935xm5v77_jzfr0000gn/T/tmp8hvp5bdt/johanrosenkilde-nasty_python-87a77c6
+	directory = /var/folders/j0/r7dc2w9170935xm5v77_jzfr0000gn/T/tmp050foqms/johanrosenkilde-nasty_python-87a77c6
+	directory = /var/folders/j0/r7dc2w9170935xm5v77_jzfr0000gn/T/tmp0lpjk_j2/johanrosenkilde-nasty_python-87a77c6
+	directory = /var/folders/j0/r7dc2w9170935xm5v77_jzfr0000gn/T/tmp0h7df2d4/0100101001010000-BlockchainDB-bb0edb4
+	directory = /var/folders/j0/r7dc2w9170935xm5v77_jzfr0000gn/T/tmpglvs9hzj/0100101001010000-BlockchainDB-bb0edb4
+	directory = /var/folders/j0/r7dc2w9170935xm5v77_jzfr0000gn/T/tmpowf5kcmh/01astha-JPMC-Virtual-Experience-f78e3a4
+	directory = /var/folders/j0/r7dc2w9170935xm5v77_jzfr0000gn/T/tmp4qtnrt26/0226daniel-Hackathon-Seoul-HW-42c65f2
+	directory = /var/folders/j0/r7dc2w9170935xm5v77_jzfr0000gn/T/tmp6gbahr1h/0226daniel-Hackathon-Seoul-HW-42c65f2
+	directory = /var/folders/j0/r7dc2w9170935xm5v77_jzfr0000gn/T/tmpq6vp1jgl/0100101001010000-BlockchainDB-bb0edb4
+	directory = /var/folders/j0/r7dc2w9170935xm5v77_jzfr0000gn/T/tmp6bfajatp/01astha-JPMC-Virtual-Experience-f78e3a4
+	directory = /var/folders/j0/r7dc2w9170935xm5v77_jzfr0000gn/T/tmpmf8_k9z5/0100101001010000-BlockchainDB-bb0edb4
+	directory = /var/folders/j0/r7dc2w9170935xm5v77_jzfr0000gn/T/tmp1g1npvzj/01astha-JPMC-Virtual-Experience-f78e3a4
+	directory = /var/folders/j0/r7dc2w9170935xm5v77_jzfr0000gn/T/tmp4zd7qk8u/0100101001010000-BlockchainDB-bb0edb4
+	directory = /var/folders/j0/r7dc2w9170935xm5v77_jzfr0000gn/T/tmpfc26xt68/0x0194-pypkgtools-2c71174
+	directory = /var/folders/j0/r7dc2w9170935xm5v77_jzfr0000gn/T/tmpvii0e3ii/0nism-datasak-fffe40b
+	directory = /var/folders/j0/r7dc2w9170935xm5v77_jzfr0000gn/T/tmpi52wod67/0x0194-pypkgtools-2c71174
+	directory = /var/folders/j0/r7dc2w9170935xm5v77_jzfr0000gn/T/tmp8sv7g_yn/johanrosenkilde-nasty_python-87a77c6
+[pull]
+	rebase = false

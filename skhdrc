@@ -8,6 +8,7 @@
 
 # ## Applications
 ctrl + cmd - t: open -n /Applications/Hyper.app
+ctrl + cmd + shift - l: pmset sleepnow
 # cmd - e: open -n /Applications/Emacs.app
 
 
@@ -29,6 +30,9 @@ ctrl + shift + cmd - n : yabai -m window --swap south
 ctrl + shift + cmd - e : yabai -m window --swap north
 ctrl + shift + cmd - o : yabai -m window --swap east
 
+ctrl + cmd - left : yabai -m window --resize left:100:0
+ctrl + cmd - right: yabai -m window --resize right:100:0
+
 ctrl + cmd - s : yabai -m window --toggle split
 shift + cmd - f : yabai -m window --toggle zoom-fullscreen && yabai -m window --toggle border
 ctrl + cmd - f : yabai -m window --toggle native-fullscreen && yabai -m window --toggle border
@@ -39,35 +43,35 @@ shift + cmd - b : yabai -m window --toggle border
 ctrl  + cmd - b : yabai -m window --toggle border
 
 # float / unfloat window and center on screen
-ctrl + cmd - l : yabai -m window --toggle float;\
+ctrl + cmd - f : yabai -m window --toggle float;\
                  yabai -m window --grid 4:4:1:1:2:2
 
 shift + cmd - down: yabai -m window --minimize
 
 # ## Spaces
-# External display
-cmd - 1 : yabai -m space --focus browser
-cmd - 2 : yabai -m space --focus code1
-cmd - 3 : yabai -m space --focus code2
-cmd - 4 : yabai -m space --focus code3
+# DISABLED since yabai requires partially disabling SIP for this to work
+# these shortcuts are instead set in Mission Control
+#    External display
+#    cmd - 1 : yabai -m space --focus browser
+#    cmd - 2 : yabai -m space --focus code1
+#    cmd - 3 : yabai -m space --focus code2
+#    cmd - 4 : yabai -m space --focus code3
 
-# MacBook Display 
-shift + cmd - 1 : yabai -m space --focus config
-shift + cmd - 2 : yabai -m space --focus slack
-shift + cmd - 3 : yabai -m space --focus macbook3
-shift + cmd - 4 : yabai -m space --focus macbook4
-# cmd - 0 : yabai -m space --focus 10
+#    MacBook Display 
+#    shift + cmd - 1 : yabai -m space --focus config
+#    shift + cmd - 2 : yabai -m space --focus slack
+#    shift + cmd - 3 : yabai -m space --focus macbook3
+#    shift + cmd - 4 : yabai -m space --focus macbook4
+#    cmd - 0 : yabai -m space --focus 10
 
-ctrl + cmd - 1 : yabai -m window --space browser
-ctrl + cmd - 2 : yabai -m window --space code1
-ctrl + cmd - 3 : yabai -m window --space code2
-ctrl + cmd - 4 : yabai -m window --space code3
-# ctrl + cmd - 5 : yabai -m window --space 5
-shift + ctrl + cmd - 1 : yabai -m window --space config
-shift + ctrl + cmd - 2 : yabai -m window --space slack
-shift + ctrl + cmd - 3 : yabai -m window --space macbook3
-shift + ctrl + cmd - 4 : yabai -m window --space macbook4
-# ctrl + cmd - 0 : yabai -m window --space 10
+ctrl + cmd - 1 : yabai -m window --space 5
+ctrl + cmd - 2 : yabai -m window --space 6
+ctrl + cmd - 3 : yabai -m window --space 7
+ctrl + cmd - 4 : yabai -m window --space 8
+shift + ctrl + cmd - 1 : yabai -m window --space 1
+shift + ctrl + cmd - 2 : yabai -m window --space 2
+shift + ctrl + cmd - 3 : yabai -m window --space 3
+shift + ctrl + cmd - 4 : yabai -m window --space 4
 
 ctrl + cmd - y : yabai -m space --move prev
 

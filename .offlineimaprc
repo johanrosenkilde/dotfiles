@@ -1,6 +1,5 @@
 [general]
-accounts = jsrn,johansjulehjerter,gmail
-# accounts = github
+accounts = jsrn, gmail,johansjulehjerter
 maxsyncaccounts = 5
 pythonfile = ~/.offlineimap.py
 
@@ -19,49 +18,16 @@ nametrans = lambda f: f
 
 [Repository Remote.jsrn]
 type = IMAP
-remotehost = mail.unoeuro.com
+remotehost = cp06.nordicway.dk
 remoteuser = jsrn@jsrn.dk
 remoteport = 993
 remotepasseval = mailpasswd("jsrn")
 ssl=true
-cert_fingerprint = 3834f8f4247d90fcefaae7fa4f4c9be30a16fc58de48d3231566304437aedafea4befefba747d5acc5b75143af70ab1baa1172b160eff604a8f8ce9affc4ab39
-folderfilter = lambda folder: folder in ['INBOX','Sent','Archives.2021']
+cert_fingerprint = 7f2b637f62eea2fad2f7670763f3df70a620f1f58b692f16af4a9efd2947f51d53f01bcf2292e2a4625e46b338f127d0b49b885f1183e0c4fb0254a8d585e7ab
+#folderfilter = lambda folder: folder in ['INBOX', 'Sent' ] #,'Archives.2022']
 maxconnections = 3
 #nametrans = lambda f: f
 idlefolders = [ 'INBOX' ]
-
-
-
-
-# [Account github]
-# localrepository = Local.github
-# remoterepository = Remote.github
-# backend = sqlite
-# quick = 10
-# #autorefresh set to something high since we're using idlefolders
-# autorefresh = 10
-
-# [Repository Local.github]
-# type = Maildir
-# localfolders = ~/mail/github
-# nametrans = lambda f: f
-
-# [Repository Remote.github]
-# type = IMAP
-# remotehost = imap.gmail.com 
-# remoteuser = johanrosenkilde@github.com
-# repoteport = 993
-# remotepasseval = mailpasswd("github")
-# ssl=true
-# sslcacertfile = ~/local/ssl_certs/ssh/certs/ca-certificates.crt 
-# maxconnections = 1
-# # nametrans = lambda f: f
-# # folderfilter = lambda folder: folder in ['INBOX']
-# # idlefolders = [ 'INBOX' ]
-
-
-
-
 
 
 
@@ -80,14 +46,14 @@ nametrans = lambda f: f
 
 [Repository Remote.johansjulehjerter]
 type = IMAP
-remotehost = mail.unoeuro.com
+remotehost = cp06.nordicway.dk
 remoteuser = johan@johansjulehjerter.dk
 remoteport = 993
 remotepasseval = mailpasswd("johansjulehjerter")
 ssl=true
-cert_fingerprint = 3834f8f4247d90fcefaae7fa4f4c9be30a16fc58de48d3231566304437aedafea4befefba747d5acc5b75143af70ab1baa1172b160eff604a8f8ce9affc4ab39
 maxconnections = 3
-#folderfilter = lambda folder: folder in ['INBOX','Sent','Archives','Salg']
+cert_fingerprint = 7f2b637f62eea2fad2f7670763f3df70a620f1f58b692f16af4a9efd2947f51d53f01bcf2292e2a4625e46b338f127d0b49b885f1183e0c4fb0254a8d585e7ab
+folderfilter = lambda folder: folder not in ['INBOX.Sent.2021','INBOX.Archive.2021']
 nametrans = lambda f: f
 idlefolders = [ 'INBOX' ]
 
@@ -143,7 +109,7 @@ remoteuser = santaphile@gmail.com
 repoteport = 993
 remotepasseval = mailpasswd("gmail")
 ssl=true
-sslcacertfile = ~/local/ssl_certs/ssh/certs/ca-certificates.crt 
+cert_fingerprint = 443b46f8d514a8df8d31252d093db9964459057ae68829fa98a1f90616c2f3747963badc588cee2b7d707904b77659383273cf43e069261db20a941125f827d1
 maxconnections = 1
 nametrans = lambda f: f
 folderfilter = lambda folder: folder in ['INBOX']

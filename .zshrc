@@ -31,8 +31,11 @@ alias sizes='du -hs *'
 alias ls="exa"
 alias la="exa -a"
 alias ll="exa -lagh"
-alias lst="exa -l --reverse --sort=new --color=always | head" # shorthand for newest files
+lst () {
+    exa -l --reverse --sort=new --color=always $@ | head
+}
 alias lsdir="exa -T --level=2"
+alias ls-tree="exa --tree -I node_modules"
 alias ed="emacsclient -c" #shorthand. And I don't intend to use ed anyway
 alias top="htop"
 alias df="gdf -h"
@@ -47,7 +50,7 @@ PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
 setenv() { export $1=$2 }  # csh compatibility
 
 # Set prompt
-source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
+source /usr/local/opt/powerlevel10k/share/powerlevel10k/powerlevel10k.zsh-theme
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 # PROMPTCOL="`cat ~/.promptcol 2>/dev/null`"
 # PROMPT=$'%3~ :%(?.%).()%{\e[0m%} '
@@ -196,17 +199,43 @@ if [ -e $HOME/github ]; then
     source $HOME/github/.github_access_token
 fi
 
-NVM_NEWEST=$(ls ~/.nvm/versions/node/ | sort | tail -1)
-PATH=$PATH:$NVM_NEWEST
-export NVM_DIR="$HOME/.nvm"
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh" --no-use # This loads nvm
-[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-# nvm use node > /dev/null
+# NVM_NEWEST=$(ls ~/.nvm/versions/node/ | sort | tail -1)
+# PATH=$PATH:$NVM_NEWEST
+load_nvm() {
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh" --no-use # This loads nvm
+    # [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+    nvm use node 18 > /dev/null
+}
 
 function sgit() {
     say -v trinoids git $@
     git "$@"
 }
 
+# Copilot CLI
+eval "$(github-copilot-cli alias -- "$0")"
+
 # This has already been sourced as .zshenv, but other things are clobbering e.g. $PATH, so we resource it now
 source ~/.zshenv
+
+if [ -n "$CONDA" ]; then
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/usr/local/Caskroom/miniconda/base/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/usr/local/Caskroom/miniconda/base/etc/profile.d/conda.sh" ]; then
+        . "/usr/local/Caskroom/miniconda/base/etc/profile.d/conda.sh"
+    else
+        export PATH="/usr/local/Caskroom/miniconda/base/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+fi
+export PATH="/usr/local/opt/llvm/bin:$PATH"
+
+# opam configuration
+[[ ! -r /Users/johanrosenkilde/.opam/opam-init/init.zsh ]] || source /Users/johanrosenkilde/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
