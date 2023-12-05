@@ -8,7 +8,7 @@
 import os, subprocess, sys
 def mailpasswd(acct):
   acct = os.path.basename(acct)
-  path = "/Users/johanprivate/mail/%s.gpg" % acct
+  path = "/Users/johanrosenkilde/mail/%s.gpg" % acct
   args = ["gpg", "-d", path]
   try:
     t = subprocess.check_output(args, text=True).strip()
