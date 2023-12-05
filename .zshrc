@@ -50,7 +50,7 @@ PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
 setenv() { export $1=$2 }  # csh compatibility
 
 # Set prompt
-source /usr/local/opt/powerlevel10k/share/powerlevel10k/powerlevel10k.zsh-theme
+source /opt/homebrew/Cellar/powerlevel10k/1.19.0/share/powerlevel10k/powerlevel10k.zsh-theme
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 # PROMPTCOL="`cat ~/.promptcol 2>/dev/null`"
 # PROMPT=$'%3~ :%(?.%).()%{\e[0m%} '
@@ -109,7 +109,9 @@ autoload -Uz compinit
 compinit -ui -d
 
 # fzf-tab
-source ~/local/fzf-tab/fzf-tab.plugin.zsh 
+# TODO: Disabled on new Mac due to some issue where completions would
+# completely break
+# source ~/local/fzf-tab/fzf-tab.plugin.zsh 
 # disable sort when completing `git checkout`
 zstyle ':completion:*:git-checkout:*' sort false
 # set descriptions format to enable group support
@@ -170,7 +172,7 @@ alias o="open"
 alias git-ls="git ls-tree --full-tree -r HEAD"
 
 
-eval "$(fasd --init auto)"
+#eval "$(fasd --init auto)"
 alias s='. sage_shortcuts'
 alias j="fasd_cd -d"
 alias jo="f -e xdg-open"
@@ -214,7 +216,7 @@ function sgit() {
 }
 
 # Copilot CLI
-eval "$(github-copilot-cli alias -- "$0")"
+#eval "$(github-copilot-cli alias -- "$0")"
 
 # This has already been sourced as .zshenv, but other things are clobbering e.g. $PATH, so we resource it now
 source ~/.zshenv
