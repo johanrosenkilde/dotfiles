@@ -32,8 +32,42 @@ alias ls="exa"
 alias la="exa -a"
 alias ll="exa -lagh"
 lst () {
-    exa -l --reverse --sort=new --color=always $@ | head
+  # Print the most recently modified files in a directory
+  # Usage: lst [-n lines] [folder]
+  # Defaults to the current folder and printing 10 lines (in terminal mode).
+  # If run in terminal mode, print the files in color and long form.
+  # If run in pipe mode, print the full path to the file and default to 1 file.
+  if [ -t 1 ]; then
+    lines=10
+  else
+    lines=1
+  fi
+  folder=""
+  while (( $# )); do
+    if [[ $1 == '-n' ]]; then
+      lines=$2
+      shift
+    else
+      if [[ -z $folder ]]; then
+        folder=$1
+      else
+        echo "Too many arguments: $1"
+        return 1
+      fi
+    fi
+    shift
+  done
+if [[ -z $folder ]]; then
+  folder="."
+  fi
+  if [ -t 1 ]; then
+    exa -l --reverse --sort=new --color=always "$folder" | head -n $lines
+  else
+    exa --reverse --sort=new "$folder" | awk -v folder="$folder" '{print folder "/" $0}' | head -n $lines
+  fi
 }
+
+export LST=$(gls -t | head -n 1)
 alias lsdir="exa -T --level=2"
 alias ls-tree="exa --tree -I node_modules"
 alias ed="emacsclient -c" #shorthand. And I don't intend to use ed anyway
