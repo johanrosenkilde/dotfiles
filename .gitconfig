@@ -1,5 +1,5 @@
 [user]
-	email = johanrosenkilde@github.com
+	email = johan@xbow.com
 	name = Johan Rosenkilde
 [core]
 	excludesfile = /home/jsrn/.gitignore_global
@@ -22,6 +22,7 @@
         sw = switch
         br = branch
 	recent = branch --sort=-committerdate --format=\"%(committerdate:relative)%09%(refname:short)\"
+        cherrypick = cherry-pick
 [merge]
         conflictstyle = diff3
 [credential]
@@ -96,3 +97,5 @@
 	directory = /var/folders/j0/r7dc2w9170935xm5v77_jzfr0000gn/T/tmp8sv7g_yn/johanrosenkilde-nasty_python-87a77c6
 [pull]
 	rebase = false
+[remote]
+	pushDefault = origin
