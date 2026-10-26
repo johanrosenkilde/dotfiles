@@ -108,3 +108,8 @@ alias bc="bc -l"
 source ~/code/dotfiles/env.sh
 
 source $HOME/.openai_key
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/johan/.lmstudio/bin"
+# End of LM Studio CLI section
+

@@ -3,11 +3,19 @@ export VISUAL="emacs"
 
 # In interactive shells, this will be double-sourced.
 # Avoid double-adding these paths
-PREPEND=$HOME/local/bin:$HOME/code/scripts:
-export PATH=$PREPEND$(echo "$PATH" | sed -e "s,$PREPEND,,g" )
+add_to_path() {
+    case ":$PATH:" in
+        *":$1:"*) ;;
+        *) PATH="$1:$PATH" ;;
+    esac
+}
+add_to_path "$HOME/local/bin"
+add_to_path "$HOME/code/scripts" 
+add_to_path "$HOME/.local/bin"
+export PATH
 
 # Remove strange artifact
-export PATH=$(echo "$PATH" | sed -e "s,:v16.0.0,,g" )
+#export PATH=$(echo "$PATH" | sed -e "s,:v16.0.0,,g" )
 
 export SAGE_PATH=$HOME/code/python:$HOME/mat
 
@@ -22,3 +30,4 @@ export NO_AT_BRIDGE=1
 # Set Pager
 export PAGER="less -R"
 export LEDGER_PAGER="less -R"
+

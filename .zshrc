@@ -28,9 +28,9 @@ alias rm='nocorrect rm'       # no spelling correction on rm
 alias mkdir='nocorrect mkdir' # no spelling correction on mkdir
 alias sizes='du -hs *'
 
-alias ls="exa"
-alias la="exa -a"
-alias ll="exa -lagh"
+alias ls="eza"
+alias la="eza -a"
+alias ll="eza -lagh"
 lst () {
   # Print the most recently modified files in a directory
   # Usage: lst [-n lines] [folder]
@@ -61,30 +61,33 @@ if [[ -z $folder ]]; then
   folder="."
   fi
   if [ -t 1 ]; then
-    exa -l --reverse --sort=new --color=always "$folder" | head -n $lines
+    eza -l --reverse --sort=new --color=always "$folder" | head -n $lines
   else
-    exa --reverse --sort=new "$folder" | awk -v folder="$folder" '{print folder "/" $0}' | head -n $lines
+    eza --reverse --sort=new "$folder" | awk -v folder="$folder" '{print folder "/" $0}' | head -n $lines
   fi
 }
 
 export LST=$(gls -t | head -n 1)
-alias lsdir="exa -T --level=2"
-alias ls-tree="exa --tree -I node_modules"
+alias lsdir="eza -T --level=2"
+alias ls-tree="eza --tree -I node_modules"
 alias ed="emacsclient -c" #shorthand. And I don't intend to use ed anyway
 alias top="htop"
 alias df="gdf -h"
 alias du="dust"
+alias cdlst="cd $(lst)"
 
 # alias find="fd"
 
 # GNU aliases of BSD ones (on Mac OS X)
-PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
+add_to_path "/usr/local/opt/grep/libexec/gnubin"
+# except for date, which sux, so we'll want /bin/date
+alias date=/bin/date
 
 # Shell functions
 setenv() { export $1=$2 }  # csh compatibility
 
 # Set prompt
-source /opt/homebrew/Cellar/powerlevel10k/1.19.0/share/powerlevel10k/powerlevel10k.zsh-theme
+source /opt/homebrew/Cellar/powerlevel10k/1.20.0/share/powerlevel10k/powerlevel10k.zsh-theme
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 # PROMPTCOL="`cat ~/.promptcol 2>/dev/null`"
 # PROMPT=$'%3~ :%(?.%).()%{\e[0m%} '
@@ -142,7 +145,8 @@ _compdir=/usr/share/zsh/$ZSH_VERSION/functions/Core
 autoload -Uz compinit
 compinit -ui -d
 
-# fzf-tab
+# fzf on branch switching
+alias fsw="git checkout \$(git branch | fzf)"
 # TODO: Disabled on new Mac due to some issue where completions would
 # completely break
 # source ~/local/fzf-tab/fzf-tab.plugin.zsh 
@@ -152,8 +156,8 @@ zstyle ':completion:*:git-checkout:*' sort false
 zstyle ':completion:*:descriptions' format '[%d]'
 # set list-colors to enable filename colorizing
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
-# preview directory's content with exa when completing cd
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa -1 --color=always $realpath'
+# preview directory's content with eza when completing cd
+#zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
 # switch group using `,` and `.`
 zstyle ':fzf-tab:*' switch-group ',' '.'
 
@@ -206,11 +210,8 @@ alias o="open"
 alias git-ls="git ls-tree --full-tree -r HEAD"
 
 
-#eval "$(fasd --init auto)"
-alias s='. sage_shortcuts'
-alias j="fasd_cd -d"
-alias jo="f -e xdg-open"
-alias lj="fasd -d -e 'ls --color=auto -F'"
+# Activate z: https://github.com/rupa/z
+. /opt/homebrew/etc/profile.d/z.sh
 
 # Allow Emacs to track zsh
 if [ -n "$INSIDE_EMACS" ]; then
@@ -230,9 +231,8 @@ then
   PS1='$ '
 fi
 
-if [ -e $HOME/github ]; then
-    source $HOME/github/.openai_key
-    source $HOME/github/.github_access_token
+if [ -e $HOME/xbow ]; then
+    set -o allexport; source $HOME/xbow/.env; set +o allexport
 fi
 
 # NVM_NEWEST=$(ls ~/.nvm/versions/node/ | sort | tail -1)
@@ -249,33 +249,49 @@ function sgit() {
     git "$@"
 }
 
-# Copilot CLI
-alias '??'='gh copilot suggest -t shell'
-alias 'git?'='gh copilot suggest -t git'
-alias 'explain'='gh copilot explain'
-
-#eval "$(github-copilot-cli alias -- "$0")"
-
 # This has already been sourced as .zshenv, but other things are clobbering e.g. $PATH, so we resource it now
 source ~/.zshenv
 
 if [ -n "$CONDA" ]; then
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/usr/local/Caskroom/miniconda/base/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$('/opt/homebrew/Caskroom/miniforge/base/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/usr/local/Caskroom/miniconda/base/etc/profile.d/conda.sh" ]; then
-        . "/usr/local/Caskroom/miniconda/base/etc/profile.d/conda.sh"
+    if [ -f "/opt/homebrew/Caskroom/miniforge/base/etc/profile.d/conda.sh" ]; then
+        . "/opt/homebrew/Caskroom/miniforge/base/etc/profile.d/conda.sh"
     else
-        export PATH="/usr/local/Caskroom/miniconda/base/bin:$PATH"
+        export PATH="/opt/homebrew/Caskroom/miniforge/base/bin:$PATH"
     fi
 fi
 unset __conda_setup
 # <<< conda initialize <<<
 fi
-export PATH="/usr/local/opt/llvm/bin:$PATH"
 
 # opam configuration
 [[ ! -r /Users/johanrosenkilde/.opam/opam-init/init.zsh ]] || source /Users/johanrosenkilde/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+
+export AWS_PROFILE=xbow
+
+
+###### XBOW ######
+alias ctf='cd ~/xbow/repos/ctf-solver'
+alias lg='ctf && cd logs && cd `lst`'
+alias qm='{ read d && eval $(xbow-bm qm $d); } <<<'
+alias xbox='claude-box -p xbow'
+
+alias '??'='sgpt --shell '
+
+# export PATH=/opt/homebrew/share/google-cloud-sdk/bin:"$PATH"
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/johan/.lmstudio/bin"
+# End of LM Studio CLI section
+
+
+# Browser-Use
+export PATH="/Users/johan/.browser-use-env/bin:/Users/johan/.local/bin:$PATH"
+
+# Don't try to install Applications as root
+export HOMEBREW_CASK_OPTS="--appdir=$HOME/Applications"
