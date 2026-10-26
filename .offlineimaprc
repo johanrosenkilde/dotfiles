@@ -1,6 +1,7 @@
 [general]
-accounts = jsrn, gmail,johansjulehjerter
-maxsyncaccounts = 5
+accounts = jsrn,johansjulehjerter,gmail
+#,johansjulehjerter
+maxsyncaccounts = 2
 pythonfile = ~/.offlineimap.py
 
 [Account jsrn]
@@ -18,12 +19,12 @@ nametrans = lambda f: f
 
 [Repository Remote.jsrn]
 type = IMAP
-remotehost = cp06.nordicway.dk
+remotehost = mail.jsrn.dk
 remoteuser = jsrn@jsrn.dk
 remoteport = 993
 remotepasseval = mailpasswd("jsrn")
 ssl=true
-cert_fingerprint =8b8e6a61c22684eda1892cc7619f95388d914b337ac414f1f48d9709
+cert_fingerprint = 8e2d2fc6281e4675e1d77c6dc13d3864295e216aeaa338410c698deda550d05d3ba01c48474f3e4c1c2c084b1a57c998d6f916ec4df2cbf1eba318c2251c081e
 #folderfilter = lambda folder: folder in ['INBOX', 'Sent' ] #,'Archives.2022']
 maxconnections = 3
 #nametrans = lambda f: f
@@ -46,13 +47,13 @@ nametrans = lambda f: f
 
 [Repository Remote.johansjulehjerter]
 type = IMAP
-remotehost = cp06.nordicway.dk
+remotehost = mail.johansjulehjerter.dk
 remoteuser = johan@johansjulehjerter.dk
 remoteport = 993
 remotepasseval = mailpasswd("johansjulehjerter")
 ssl=true
 maxconnections = 3
-cert_fingerprint =8b8e6a61c22684eda1892cc7619f95388d914b337ac414f1f48d9709
+cert_fingerprint =  accb55833f57a4ab89a29c9cf0977a89b778d88bdadb9d2d843956ab27379c95dfc5445210e13089e21a5e83e1b0ec144e98a495bccbebfc61b4420dd46667df
 folderfilter = lambda folder: folder not in ['INBOX.Sent.2021','INBOX.Archive.2021']
 nametrans = lambda f: f
 idlefolders = [ 'INBOX' ]
@@ -109,7 +110,7 @@ remoteuser = santaphile@gmail.com
 repoteport = 993
 remotepasseval = mailpasswd("gmail")
 ssl=true
-cert_fingerprint = f2e34a56227eebd849bf4a1cd533fad7d1638dff7c7d1e735bc05de60d06aa87a421f3a4b7d758fec7e953010dd34747
+cert_fingerprint = 9b39342357139f812a4b5d06e8b757680cb4389c
 maxconnections = 1
 nametrans = lambda f: f
 folderfilter = lambda folder: folder in ['INBOX']
